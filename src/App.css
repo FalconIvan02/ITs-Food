@@ -1,0 +1,9 @@
+#root {
+    min-width: 375px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body {
+    background-color: #272727;
+}
