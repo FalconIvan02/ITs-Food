@@ -1,14 +1,9 @@
-import "./App.css";
-import Primary from "./components/Primary";
-import Footer from "./components/Footer";
-import Head from "./components/Head";
+import MenuNexo from "./pages/MenuNexo";
 
 function App() {
     return (
         <>
-            <Head />
-            <Primary />
-            <Footer />
+            <MenuNexo />
         </>
     );
 }
