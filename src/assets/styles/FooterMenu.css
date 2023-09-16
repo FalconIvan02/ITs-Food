@@ -1,0 +1,20 @@
+footer {
+    background-color: #682c0e;
+    width: 100vw;
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+}
+footer section {
+    margin: 0.4rem 0 0.4rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+footer img {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #f9e0ae;
+    border-radius: 50%;
+    opacity: 60%;
+}

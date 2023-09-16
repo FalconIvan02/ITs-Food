@@ -1,42 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&family=Rosarivo&display=swap");
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 body {
-  background-color: #894213;
+    background-color: #894213;
 }
 header {
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
 }
 
 .containerLogo {
-  width: 170px;
-  height: 170px;
-  border-radius: 90px;
-  background-color: rgba(249, 224, 174, 0.5);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3em;
-  box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  margin-top: 2%;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background-color: rgba(249, 224, 174, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 8px 5px 0px rgba(0, 0, 0, 0.5);
+    margin-top: 1rem;
 }
 .containerLogo img {
-  width: 100px;
-  height: 80px;
+    width: 6rem;
+    height: 5rem;
 }
 .containerLogo h2 {
-  font-family: "Lobster", cursive;
-  font-family: "Rosarivo", serif;
-  color: #efe3c8;
-  text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.5);
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+    font-family: "Lobster", cursive;
+    font-family: "Rosarivo", serif;
+    color: #efe3c8;
+    text-shadow: 0px 8px 6px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
 }

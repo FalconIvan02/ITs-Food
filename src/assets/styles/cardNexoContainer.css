@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.cardNexoContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    justify-content: space-around;
+    align-content: space-around;
+
+    margin: 2rem 1rem 0 1rem;
+}
+
+@media (max-width: 420px) {
+    .cardNexoContainer {
+        margin: 2rem 0 0 0;
+        gap: 0.5em;
+    }
+}
+@media (min-width: 480px) {
+    .cardNexoContainer {
+        margin: 1rem 4rem 0 4rem;
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 650px) {
+    .cardNexoContainer {
+        margin: 8rem 0 4rem 0;
+        flex-wrap: nowrap;
+    }
+}

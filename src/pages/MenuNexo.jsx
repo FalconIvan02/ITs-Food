@@ -1,16 +1,18 @@
 import LogoAndText from "../components/LogoAndText";
 import CardNexo from "../components/CardNexo";
-import "../assets/styles/menuNexoContainer.css";
+import "../assets/styles/cardNexoContainer.css";
+import MenuFooter from "../components/MenuFooter";
 function MenuNexo() {
     return (
         <main>
             <LogoAndText></LogoAndText>
-            <div className="cartNexoContainer">
+            <div className="cardNexoContainer">
                 <CardNexo></CardNexo>
                 <CardNexo></CardNexo>
                 <CardNexo></CardNexo>
                 <CardNexo></CardNexo>
             </div>
+            <MenuFooter></MenuFooter>
         </main>
     );
 }
