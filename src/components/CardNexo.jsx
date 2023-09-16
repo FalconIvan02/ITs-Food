@@ -9,7 +9,7 @@ function CardNexo() {
                 <section className="text">
                     <span>IT'S</span>
                     <h3>Coffe</h3>
-                </section>
+                </section>{" "}
             </div>
         </div>
     );

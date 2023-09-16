@@ -1,12 +1,12 @@
 import "../assets/styles/Primary.css";
-
+import { Link } from "react-router-dom";
 function Primary() {
     return (
         <>
             <main>
                 <ul className="list-container">
                     <li>
-                        <a href="">Menú</a>
+                        <Link to="/Menu">Menú</Link>
                     </li>
                     <li>
                         <a href="">Locales</a>

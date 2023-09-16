@@ -27,7 +27,7 @@
 }
 @media (min-width: 650px) {
     .cardNexoContainer {
-        margin: 8rem 0 4rem 0;
+        margin: 1rem;
         flex-wrap: nowrap;
     }
 }
