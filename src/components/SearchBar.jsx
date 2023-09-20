@@ -1,23 +1,29 @@
-import "../assets/styles/searchBar.css";
 import SearchIcon from "../assets/icons/SearchIcon.svg";
-import { useContext } from "react";
-import { UserContext } from "../../userContext";
-const SearchBar = () => {
-  const { handleChangeText } = useContext(UserContext);
+// import { useContext } from "react";
+// import { ProductsContext } from "../../ProductsContext";
 
+import "../assets/styles/searchBar.css";
+
+const SearchBar = ({ getDataFilter }) => {
   return (
-    <>
-      <form>
-        <div className="searchbar-container">
-          <img src={SearchIcon} alt="Icono de busqueda" />
-          <input
-            placeholder="¿Que te gustaria tomar hoy?"
-            type="search"
-            onChange={handleChangeText}
-          />
-        </div>
-      </form>
-    </>
+    <form onSubmit={(e) => e.preventDefault()}>
+      <div className="searchbar__container">
+        <img
+          src={SearchIcon}
+          alt="Icono de busqueda"
+          className="searchbar__image"
+        />
+        <input
+          className="searchbar__input"
+          placeholder="¿Que te gustaria tomar hoy?"
+          type="search"
+          onChange={(e) => getDataFilter(e.target.value.toLowerCase())}
+        />
+      </div>
+      <span className="searchbar__info">
+        Criterio de búsqueda por nombres y no los títulos
+      </span>
+    </form>
   );
 };
 export default SearchBar;

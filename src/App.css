@@ -1,8 +1,19 @@
-#root {
-    margin: 0 auto;
-    text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Rosarivo&display=swap");
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #272727;
+  background-color: #894213;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }

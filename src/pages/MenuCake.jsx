@@ -1,34 +1,46 @@
-import NavBarMenu from "../components/NavBarMenu";
-import MenuFooter from "../components/MenuFooter";
-import { useContext } from "react";
-import { UserContext } from "../../userContext";
-function MenuCake() {
-  const { dataCakes, isLoading, isError, searchText } = useContext(UserContext);
+import { useContext, useEffect, useState } from "react";
+import { ProductsContext } from "../../ProductsContext";
 
-  /*   const filtro = dataCakes.filter((cake) =>
-    cake.nombre.toLowerCase().includes(searchText.toLowerCase())
-  );
-  console.log(filtro); */
+import NavBarMenu from "../components/NavBarMenu";
+import MenuFooter from "../components/MenuFooter/MenuFooter";
+import SearchBar from "../components/SearchBar";
+import { CardNexo } from "../components/CardNexo/CardNexo";
+
+function MenuCake() {
+  const { data, isLoading, isError } = useContext(ProductsContext);
+
+  const [dataCakes, setDataCakes] = useState([]);
+
+  useEffect(() => {
+    if (data) {
+      setDataCakes(data.cakes);
+    }
+  }, [data]);
+
+  const getDataFilter = (query) => {
+    // Filtrar los productos basados en la query
+    const dataFilter = data.cakes.filter((cakes) => {
+      return cakes.nombre.toLowerCase().includes(query);
+    });
+
+    setDataCakes(dataFilter);
+  };
+
+  if (isLoading) return <h3>Estoy cargando capo</h3>;
+
+  if (isError) return <h2>Rompiste algo capo</h2>;
+
   return (
     <>
       <NavBarMenu />
+      <div>
+        <SearchBar getDataFilter={getDataFilter}></SearchBar>
+      </div>
       <div className="cardMenuContainer">
-        {isLoading ? (
-          <h3>Estoy cargando capo</h3>
-        ) : isError ? (
-          <h2>Rompiste algo capo</h2>
-        ) : (
-          dataCakes.map((prod) => (
-            <section className="containerMenu">
-              <img src={prod.imagen}></img>
-              <div className="textCard">
-                <section className="text">
-                  <p>{prod.nombre}</p>
-                </section>
-              </div>
-            </section>
-          ))
-        )}
+        {dataCakes &&
+          dataCakes.map(({ imagen, titulo }, index) => (
+            <CardNexo key={index} title={titulo} image={imagen} />
+          ))}
       </div>
       <MenuFooter />
     </>
