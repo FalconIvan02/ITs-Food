@@ -5,7 +5,6 @@ import DrinkIcon from "../assets/icons/DrinkIcon.svg";
 import SearchIcon from "../assets/icons/SearchIcon.svg";
 import "../assets/styles/NavBarMenu.css";
 import { Link, NavLink } from "react-router-dom";
-
 function NavBarMenu() {
     return (
         <>

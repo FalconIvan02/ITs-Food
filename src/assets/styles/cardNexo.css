@@ -11,6 +11,8 @@
     height: 15.5rem;
     border-radius: 14px;
     background: rgba(255, 255, 255, 0.1);
+
+    box-shadow: 2px 2px 8px #682c0e;
 }
 .containerCarta h3 {
     text-align: center;
@@ -35,7 +37,7 @@
 }
 .text {
     color: rgba(239, 227, 200, 0.5);
-    font-size: 22px;
+
     font-weight: 400;
 }
 

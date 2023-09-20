@@ -2,7 +2,7 @@ import { createContext, useEffect, useState } from "react";
 export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
-    const url = "https://itsfood.free.beeceptor.com/menus";
+    const url = "https://apimocha.com/api-project/menus";
     const [data, setData] = useState([]);
     const [dataCoffees, setDataCoffees] = useState([]);
     const [dataDrinks, setDataDrinks] = useState([]);
@@ -25,10 +25,6 @@ export const UserContextProvider = ({ children }) => {
             .catch((err) => setisError(true))
             .finally(() => setisLoading(false));
     }, []);
-
-    const handleChangeText = (e) => {
-        setSearchText(e.target.value);
-    };
 
     const contextValue = { data, isLoading, isError, dataCoffees, dataDrinks, dataCakes, dataLunch };
 
