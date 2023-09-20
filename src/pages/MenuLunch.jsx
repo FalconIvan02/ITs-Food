@@ -13,16 +13,18 @@ function MenuLunch() {
                 ) : isError ? (
                     <h2>Rompiste algo capo</h2>
                 ) : (
-                    dataLunch.map((prod) => (
-                        <section className="containerMenu">
-                            <img src={prod.imagen}></img>
-                            <div className="textCard">
-                                <section className="text">
-                                    <p>{prod.nombre}</p>
-                                </section>
-                            </div>
-                        </section>
-                    ))
+                    dataLunch
+                        .sort((a, b) => (a.nombre > b.nombre ? 1 : -1))
+                        .map((prod) => (
+                            <section className="containerMenu">
+                                <img src={prod.imagen}></img>
+                                <div className="textCard">
+                                    <section className="text">
+                                        <p>{prod.nombre}</p>
+                                    </section>
+                                </div>
+                            </section>
+                        ))
                 )}
             </div>
             <MenuFooter />
