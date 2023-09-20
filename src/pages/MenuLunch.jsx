@@ -3,7 +3,7 @@ import MenuFooter from "../components/MenuFooter";
 import { useContext } from "react";
 import { UserContext } from "../../userContext";
 function MenuLunch() {
-    const { data, isLoading, isError } = useContext(UserContext);
+    const { dataLunch, isLoading, isError } = useContext(UserContext);
     return (
         <>
             <NavBarMenu />
@@ -13,7 +13,7 @@ function MenuLunch() {
                 ) : isError ? (
                     <h2>Rompiste algo capo</h2>
                 ) : (
-                    data.map((prod) => (
+                    dataLunch.map((prod) => (
                         <section className="containerMenu">
                             <img src={prod.imagen}></img>
                             <div className="textCard">

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../../userContext";
 
 function MenuDrink() {
-    const { data, isLoading, isError } = useContext(UserContext);
+    const { dataDrinks, isLoading, isError } = useContext(UserContext);
     return (
         <>
             <NavBarMenu />
@@ -14,7 +14,7 @@ function MenuDrink() {
                 ) : isError ? (
                     <h2>Rompiste algo capo</h2>
                 ) : (
-                    data.map((prod) => (
+                    dataDrinks.map((prod) => (
                         <section className="containerMenu">
                             <img src={prod.imagen}></img>
                             <div className="textCard">

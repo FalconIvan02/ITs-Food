@@ -3,7 +3,7 @@ import MenuFooter from "../components/MenuFooter";
 import { useContext } from "react";
 import { UserContext } from "../../userContext";
 function MenuCake() {
-    const { data, isLoading, isError } = useContext(UserContext);
+    const { dataCakes, isLoading, isError } = useContext(UserContext);
     return (
         <>
             <NavBarMenu />
@@ -13,7 +13,7 @@ function MenuCake() {
                 ) : isError ? (
                     <h2>Rompiste algo capo</h2>
                 ) : (
-                    data.map((prod) => (
+                    dataCakes.map((prod) => (
                         <section className="containerMenu">
                             <img src={prod.imagen}></img>
                             <div className="textCard">
