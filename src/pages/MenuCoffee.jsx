@@ -1,6 +1,5 @@
 import NavBarMenu from "../components/NavBarMenu";
 import MenuFooter from "../components/MenuFooter";
-import CardMenu from "../components/CardMenu";
 import { useContext } from "react";
 import { UserContext } from "../../userContext";
 
