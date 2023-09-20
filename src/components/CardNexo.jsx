@@ -1,15 +1,15 @@
 import "../assets/styles/CardNexo.css";
-function CardNexo() {
+function CardNexo(props) {
     return (
         <div className="containerCarta">
             <div className="rectangleImg">
-                <img src="https://wallpapercave.com/wp/wp3583810.jpg" alt="" />
+                <img src={props.menuImg} alt="" />
             </div>
-            <div className="textCard">
-                <section className="text">
+            <div className="textCardMenu">
+                <section className="textMenu">
                     <span>IT'S</span>
-                    <h3>Coffe</h3>
-                </section>{" "}
+                    <h3>{props.menuName}</h3>
+                </section>
             </div>
         </div>
     );
