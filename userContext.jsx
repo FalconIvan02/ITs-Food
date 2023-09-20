@@ -8,6 +8,7 @@ export const UserContextProvider = ({ children }) => {
     const [dataDrinks, setDataDrinks] = useState([]);
     const [dataCakes, setDataCakes] = useState([]);
     const [dataLunch, setDataLunch] = useState([]);
+    const [searchText, setSearchText] = useState ("");
     const [isLoading, setisLoading] = useState(true);
     const [isError, setisError] = useState(false);
 
@@ -27,10 +28,11 @@ export const UserContextProvider = ({ children }) => {
     }, []);
 
     const handleChangeText = (e) => {
+        console.log (e.target.value)
         setSearchText(e.target.value);
     };
 
-    const contextValue = { data, isLoading, isError, dataCoffees, dataDrinks, dataCakes, dataLunch };
+    const contextValue = { data, isLoading, isError, dataCoffees, dataDrinks, dataCakes, dataLunch, searchText, handleChangeText };
 
     return <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>;
 };
