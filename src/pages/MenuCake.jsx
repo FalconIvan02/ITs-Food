@@ -6,7 +6,8 @@ import MenuFooter from "../components/MenuFooter/MenuFooter";
 import SearchBar from "../components/SearchBar";
 import { CardNexo } from "../components/CardNexo/CardNexo";
 import PacmanLoader from "react-spinners/PacmanLoader";
-
+import AscendingIcon from "../assets/icons/Sort-ascending-letters.svg";
+import DescendingIcon from "../assets/icons/Sort-descending-letters.svg";
 function MenuCake() {
     const { data, isLoading, isError } = useContext(ProductsContext);
 
@@ -40,12 +41,37 @@ function MenuCake() {
                 <h2>Rompiste algo capo</h2>
             </div>
         );
+    const descendingEvent = () => {
+        let data = [...dataCakes];
+        console.log("La funcion se ejecuta");
+        if (data.length > 0) {
+            console.log("La funcion entra al sorting descending");
+            let result = data.sort((a, b) => b.nombre.localeCompare(a.nombre));
+            setDataCakes(result);
+        }
+    };
+    const ascendingEvent = () => {
+        let data = [...dataCakes];
+        if (data.length > 0) {
+            console.log("La funcion entra al sorting ascending");
+            let result = data.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            setDataCakes(result);
+        }
+    };
 
     return (
         <>
             <NavBarMenu />
             <div>
                 <SearchBar getDataFilter={getDataFilter}></SearchBar>
+            </div>
+            <div className="buttons-sorting-container">
+                <button onClick={ascendingEvent}>
+                    <img src={AscendingIcon} alt="" />
+                </button>
+                <button onClick={descendingEvent}>
+                    <img src={DescendingIcon} alt="" />
+                </button>
             </div>
             <div className="cardMenuContainer">
                 {dataCakes &&

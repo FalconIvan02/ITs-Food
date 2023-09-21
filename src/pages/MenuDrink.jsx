@@ -5,6 +5,9 @@ import NavBarMenu from "../components/NavBarMenu";
 import MenuFooter from "../components/MenuFooter/MenuFooter";
 import SearchBar from "../components/SearchBar";
 import { CardNexo } from "../components/CardNexo/CardNexo";
+import PacmanLoader from "react-spinners/PacmanLoader";
+import AscendingIcon from "../assets/icons/Sort-ascending-letters.svg";
+import DescendingIcon from "../assets/icons/Sort-descending-letters.svg";
 
 function MenuDrink() {
     const { data, isLoading, isError } = useContext(ProductsContext);
@@ -35,11 +38,36 @@ function MenuDrink() {
 
     if (isError) return <h2>Rompiste algo capo</h2>;
 
+    const descendingEvent = () => {
+        let data = [...dataDrinks];
+        console.log("La funcion se ejecuta");
+        if (data.length > 0) {
+            console.log("La funcion entra al sorting descending");
+            let result = data.sort((a, b) => b.nombre.localeCompare(a.nombre));
+            setDataDrinks(result);
+        }
+    };
+    const ascendingEvent = () => {
+        let data = [...dataDrinks];
+        if (data.length > 0) {
+            console.log("La funcion entra al sorting ascending");
+            let result = data.sort((a, b) => a.nombre.localeCompare(b.nombre));
+            setDataDrinks(result);
+        }
+    };
     return (
         <>
             <NavBarMenu />
             <div>
                 <SearchBar getDataFilter={getDataFilter}></SearchBar>
+            </div>
+            <div className="buttons-sorting-container">
+                <button onClick={ascendingEvent}>
+                    <img src={AscendingIcon} alt="" />
+                </button>
+                <button onClick={descendingEvent}>
+                    <img src={DescendingIcon} alt="" />
+                </button>
             </div>
             <div className="cardMenuContainer">
                 {dataDrinks &&

@@ -32,9 +32,23 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 1em;
+    max-width: 90%;
+    gap: 2em;
     justify-content: space-around;
     align-content: space-around;
-    margin: 2rem 1rem 0 1rem;
+    margin: 0 auto;
     padding-bottom: 6rem;
+}
+.buttons-sorting-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+.buttons-sorting-container button {
+    border: 0;
+
+    border-radius: 6px;
+    width: 2rem;
+    height: 2rem;
+    background: #f9e0ae;
 }

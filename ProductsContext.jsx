@@ -16,7 +16,7 @@ export const ProductsContextProvider = ({ children }) => {
         try {
             setError(null);
             setIsLoading(true);
-            const response = await fetch("https://api.npoint.io/49bdf7c82e1488ea457f");
+            const response = await fetch("https://api.npoint.io/f98528e04478862228d2");
             const data = await response.json();
             setProducts(data);
         } catch (err) {
