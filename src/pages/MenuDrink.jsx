@@ -7,43 +7,48 @@ import SearchBar from "../components/SearchBar";
 import { CardNexo } from "../components/CardNexo/CardNexo";
 
 function MenuDrink() {
-  const { data, isLoading, isError } = useContext(ProductsContext);
+    const { data, isLoading, isError } = useContext(ProductsContext);
 
-  const [dataDrinks, setDataDrinks] = useState([]);
+    const [dataDrinks, setDataDrinks] = useState([]);
 
-  useEffect(() => {
-    if (data) {
-      setDataDrinks(data.drinks);
-    }
-  }, [data]);
+    useEffect(() => {
+        if (data) {
+            setDataDrinks(data.drinks);
+        }
+    }, [data]);
 
-  const getDataFilter = (query) => {
-    // Filtrar los productos basados en la query
-    const dataFilter = data.drinks.filter((drinks) => {
-      return drinks.nombre.toLowerCase().includes(query);
-    });
+    const getDataFilter = (query) => {
+        // Filtrar los productos basados en la query
+        const dataFilter = data.drinks.filter((drinks) => {
+            return drinks.nombre.toLowerCase().includes(query);
+        });
 
-    setDataDrinks(dataFilter);
-  };
+        setDataDrinks(dataFilter);
+    };
 
-  if (isLoading) return <h3>Estoy cargando capo</h3>;
+    if (isLoading)
+        return (
+            <div className="Message-loading">
+                <PacmanLoader color="#F9E0AE" />
+            </div>
+        );
 
-  if (isError) return <h2>Rompiste algo capo</h2>;
+    if (isError) return <h2>Rompiste algo capo</h2>;
 
-  return (
-    <>
-      <NavBarMenu />
-      <div>
-        <SearchBar getDataFilter={getDataFilter}></SearchBar>
-      </div>
-      <div className="cardMenuContainer">
-        {dataDrinks &&
-          dataDrinks.map(({ imagen, titulo }, index) => (
-            <CardNexo key={index} title={titulo} image={imagen} />
-          ))}
-      </div>
-      <MenuFooter />
-    </>
-  );
+    return (
+        <>
+            <NavBarMenu />
+            <div>
+                <SearchBar getDataFilter={getDataFilter}></SearchBar>
+            </div>
+            <div className="cardMenuContainer">
+                {dataDrinks &&
+                    dataDrinks.map(({ imagen, titulo }, index) => (
+                        <CardNexo key={index} title={titulo} image={imagen} />
+                    ))}
+            </div>
+            <MenuFooter />
+        </>
+    );
 }
 export default MenuDrink;
