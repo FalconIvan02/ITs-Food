@@ -46,7 +46,7 @@
 }
 .buttons-sorting-container button {
     border: 0;
-
+    cursor: pointer;
     border-radius: 6px;
     width: 2rem;
     height: 2rem;
