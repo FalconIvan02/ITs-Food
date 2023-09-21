@@ -6,7 +6,7 @@ export const ProductsContext = createContext({});
 
 // Crear el proveedor de contexto de productos
 export const ProductsContextProvider = ({ children }) => {
-  //! Variables de estado para los juegos, la carga y el error
+  //! Variables de estado para los productos, la carga y el error
   const [data, setProducts] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setError] = useState(null);
@@ -17,7 +17,7 @@ export const ProductsContextProvider = ({ children }) => {
       setError(null);
       setIsLoading(true);
       const response = await fetch(
-        "https://api.npoint.io/e4fc49a1225cecabeb0d"
+        "https://api.npoint.io/49bdf7c82e1488ea457f"
       );
       const data = await response.json();
       setProducts(data);

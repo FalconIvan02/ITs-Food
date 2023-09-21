@@ -15,14 +15,11 @@ const SearchBar = ({ getDataFilter }) => {
         />
         <input
           className="searchbar__input"
-          placeholder="¿Que te gustaria tomar hoy?"
+          placeholder="¿Que te apetece hoy?"
           type="search"
           onChange={(e) => getDataFilter(e.target.value.toLowerCase())}
         />
       </div>
-      <span className="searchbar__info">
-        Criterio de búsqueda por nombres y no los títulos
-      </span>
     </form>
   );
 };

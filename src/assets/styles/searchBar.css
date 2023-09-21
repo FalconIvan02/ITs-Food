@@ -29,8 +29,3 @@
 .active {
   filter: grayscale(100%) invert(1);
 }
-
-.searchbar__info {
-  display: block;
-  text-align: center;
-}
