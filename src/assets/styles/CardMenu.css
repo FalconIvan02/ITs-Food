@@ -1,30 +1,54 @@
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
+}
+.Message-loading {
+    display: grid;
+    height: 100vh;
+    place-content: center;
+}
+.Message-Error {
+    display: grid;
+    height: 100vh;
+    place-content: center;
 }
 .containerMenu img {
-  width: 124px;
-  height: 118px;
-  border-radius: 20%;
+    width: 124px;
+    height: 118px;
+    border-radius: 20%;
 }
 .containerMenu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 9.5rem;
-  height: 15.5rem;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 2px 2px 8px #682c0e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 9.5rem;
+    height: 15.5rem;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 2px 2px 8px #682c0e;
 }
 .cardMenuContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1em;
-  justify-content: space-around;
-  align-content: space-around;
-  margin: 2rem 1rem 0 1rem;
-  padding-bottom: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 90%;
+    gap: 2em;
+    justify-content: space-around;
+    align-content: space-around;
+    margin: 0 auto;
+    padding-bottom: 6rem;
+}
+.buttons-sorting-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1rem;
+}
+.buttons-sorting-container button {
+    border: 0;
+    cursor: pointer;
+    border-radius: 6px;
+    width: 2rem;
+    height: 2rem;
+    background: #f9e0ae;
 }
