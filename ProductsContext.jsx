@@ -29,7 +29,9 @@ export const ProductsContextProvider = ({ children }) => {
 
     // Efecto para inicializar el contexto
     useEffect(() => {
-        fetchData();
+        setTimeout(() => {
+            fetchData();
+        }, 10500);
     }, []);
 
     // Devolver el proveedor de contexto

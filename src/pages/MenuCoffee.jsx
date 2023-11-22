@@ -38,19 +38,18 @@ function MenuCoffee() {
 
     if (isError) return <h2>Rompiste algo capo</h2>;
 
+    //Funcion para sortear de manera descendente
     const descendingEvent = () => {
         let data = [...dataCoffees];
-        console.log("La funcion se ejecuta");
         if (data.length > 0) {
-            console.log("La funcion entra al sorting descending");
             let result = data.sort((a, b) => b.nombre.localeCompare(a.nombre));
             setDataCoffees(result);
         }
     };
+    //Funcion para sortear de manera ascendente
     const ascendingEvent = () => {
         let data = [...dataCoffees];
         if (data.length > 0) {
-            console.log("La funcion entra al sorting ascending");
             let result = data.sort((a, b) => a.nombre.localeCompare(b.nombre));
             setDataCoffees(result);
         }
